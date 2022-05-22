@@ -11,7 +11,21 @@ const initializePassport = require('./passportConfig');
 const {v4 : uuidv4} = require('uuid');
 const multer = require('multer');
 const nodemailer = require("nodemailer");
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+app.use(
+    cors({
+        origin: "*"
+    })
+)
+
+app.use(bodyParser.urlencoded({ extended: true }))
+
+app.use(bodyParser.json())
+
 app.use(express.json())
+
 
 var transporter = nodemailer.createTransport({
   service: 'gmail',
