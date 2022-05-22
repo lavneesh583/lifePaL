@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Copyright(props) {
   return (
@@ -33,10 +34,33 @@ export default function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
+
+    const user_data = {
+      name: data.get("fullName"),
       email: data.get("email"),
       password: data.get("password"),
-    });
+      password2: data.get("password2"),
+    };
+    console.log(user_data);
+    const json_data = JSON.stringify(user_data);
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: json_data,
+    };
+
+    fetch("http://localhost:5000/user/register", requestOptions)
+      .then((response) => {
+        console.log(response);
+        response.json();
+      })
+      .then((data) => console.log(data));
+
+    // axios.post("http://localhost:5000/user/register", user_data).then(res => {
+    //   console.log(res);
+    // }).catch(err => {
+    //   console.log(err);
+    // })
   };
 
   return (
@@ -100,10 +124,10 @@ export default function SignUp() {
                 <TextField
                   required
                   fullWidth
-                  name="password"
+                  name="password2"
                   label="Confirm Password"
                   type="password"
-                  id="password"
+                  id="password2"
                   autoComplete="current-password"
                 />
               </Grid>

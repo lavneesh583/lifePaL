@@ -6,21 +6,12 @@ import {
   Paper,
   TextField,
   Grid,
-  Table,
-  TableContainer,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableBody,
   Dialog,
   DialogTitle,
   DialogContent,
   DialogContentText,
   DialogActions,
 } from "@mui/material";
-import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import { useState } from "react";
 import RecordTable from "../components/Table";
 
@@ -41,7 +32,7 @@ const Profile = () => {
       <Box
         sx={{
           width: "100%",
-          backgroundColor: "error.light",
+          backgroundColor: "error.dark",
           padding: "8rem 0 5rem 0",
         }}
       >
@@ -149,92 +140,6 @@ const Profile = () => {
         <Paper elevation={6} sx={{ margin: "0 5rem 0 5rem" }}>
           <RecordTable />
         </Paper>
-        {/* <Paper elevation={6} sx={{ margin: "0 5rem 0 5rem" }}>
-          <Grid
-            container
-            spacing={2}
-            sx={{ padding: "3rem" }}
-            justifyContent="space-between"
-          >
-            <Grid item xs={6}>
-              <TextField id="Name" label="Name" variant="outlined" fullWidth />
-            </Grid>
-            <Grid item xs={5}>
-              <Typography
-                variant="h5"
-                sx={{
-                  fontWeight: "700",
-                }}
-              >
-                Contact Us
-              </Typography>
-              <Typography variant="subtitle1" sx={{ color: "rgba(0,0,0,0.8)" }}>
-                info@lifepal.com
-              </Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <TextField
-                id="Email"
-                label="Email"
-                variant="outlined"
-                fullWidth
-              />
-            </Grid>
-            <Grid item xs={5}>
-              <Typography
-                variant="h5"
-                sx={{
-                  fontWeight: "700",
-                }}
-              >
-                Phone
-              </Typography>
-              <Typography variant="subtitle1" sx={{ color: "rgba(0,0,0,0.8)" }}>
-                1800-456-6588
-              </Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <TextField
-                id="outlined-multiline-static"
-                label="Message"
-                multiline
-                rows={4}
-                fullWidth
-              />
-            </Grid>
-            <Grid item xs={5}>
-              <Typography
-                variant="h5"
-                sx={{
-                  fontWeight: "700",
-                }}
-              >
-                Based in
-              </Typography>
-              <Typography variant="subtitle1" sx={{ color: "rgba(0,0,0,0.8)" }}>
-                Patiala, Punjab
-              </Typography>
-              <Stack direction="row" spacing={2} mt={2}>
-                <FacebookRoundedIcon />
-                <InstagramIcon />
-                <TwitterIcon />
-              </Stack>
-            </Grid>
-            <Grid item xs={3}>
-              <Button
-                variant="contained"
-                color="error"
-                sx={{
-                  padding: "1rem 3rem",
-                  //   borderRadius: "50px",
-                  backgroundColor: "error.light",
-                }}
-              >
-                Submit
-              </Button>
-            </Grid>
-          </Grid>
-        </Paper> */}
       </Box>
     </>
   );
